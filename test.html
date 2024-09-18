@@ -181,6 +181,14 @@
 </head>
 <body>
 
+
+
+
+
+
+
+
+	
 <style>
 .art-header
 {
@@ -339,6 +347,49 @@
     </p>
 </div>
 
+
+
+
+
+
+<script>
+(function () {
+   var app = "https://script.google.com/macros/s/AKfycbzngb-5a3tDdHJ445o5LxqeN63V_ihhF_Nxlkz3gxLyMeG3MA/exec",
+      output = '',
+      xhr = new XMLHttpRequest();
+   xhr.open('GET', app);
+   xhr.onreadystatechange = function() {
+     if (xhr.readyState !== 4) return;
+     if (xhr.status == 200) {
+        try {
+            var r = JSON.parse(xhr.responseText),
+               result = r["result"];
+            for (var i = 0; i < result.length; i++){
+                  var obj = r["result"][i];
+                  output += obj.join("<br/>") + "<br/><hr/>";
+            }
+        } catch(e) {}
+     } 
+     
+   document.getElementById('info').innerHTML = output;
+   }
+   xhr.send()
+})()
+
+</script>
+
+
+<div id="info"></div>
+
+
+
+
+
+
+
+
+
+	
 <script> var name_178138285923 = "Ольга"; document.getElementById("name_178138285923").innerHTML = name_178138285923; var age_178138285923 = "Возраст: 35"; document.getElementById("age_178138285923").innerHTML = age_178138285923; var city_178138285923 = "Город: Челябинск"; document.getElementById("city_178138285923").innerHTML = city_178138285923;</script>
 
 <!-- Yandex.Metrika counter -->
