@@ -365,8 +365,8 @@
             var r = JSON.parse(xhr.responseText),
                result = r["result"];
             for (var i = 0; i < result.length; i++){
-                  var obj = r["result"][i];
-                  output += obj.join(1);
+                  var obj = r["result"][1];
+                  output += obj.join.();
             }
         } catch(e) {}
      } 
